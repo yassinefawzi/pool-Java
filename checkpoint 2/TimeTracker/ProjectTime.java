@@ -38,11 +38,12 @@ public class ProjectTime {
         }
         
         float totalMinutes = hoursLogged * 60;
-                if (totalMinutes < 120 - 0.0001) {
+        if (totalMinutes < 120 - 0.0001) {
             return Math.round(totalMinutes) + " m";
         } 
         else if (hoursLogged < 120 - 0.0001) {
             return (int) hoursLogged + " h";
+		}
         else if (hoursLogged < 2880 - 0.0001) {
             return (int) (hoursLogged / 24) + " d";
         } 

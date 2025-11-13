@@ -15,12 +15,6 @@ public class DoubleLinkedList implements LinkedList {
 		}
 	}
 
-	public DoubleLinkedList() {
-		this.head = null;
-		this.tail = null;
-		this.size = 0;
-	}
-
 	@Override
 	public int at(int index) {
 		if (index < 0 || index >= size) {
