@@ -74,6 +74,7 @@ public class CircularLinkedList implements LinkedList {
         }
         size--;
     }
+	
     @Override
     public int size() {
         return size;
