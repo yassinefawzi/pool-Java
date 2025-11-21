@@ -18,7 +18,7 @@ class BuilderBlueprintTest {
     @Test
     void testConstructedPattern() {
         director.setBuilder(builder);
-        Regex regex = director.construct();
+        BuilderBlueprint regex = director.construct();
 
         String expectedPattern = "Hello\\s\\w.";
         assertThat(regex.getPattern())
@@ -29,7 +29,7 @@ class BuilderBlueprintTest {
     @Test
     void testBuildLiteral() {
         builder.buildLiteral("Test");
-        Regex regex = builder.getResult();
+        BuilderBlueprint regex = builder.getResult();
 
         String expectedPattern = "Test";
         assertThat(regex.getPattern())
@@ -40,7 +40,7 @@ class BuilderBlueprintTest {
     @Test
     void testBuildAnyCharacter() {
         builder.buildAnyCharacter();
-        Regex regex = builder.getResult();
+        BuilderBlueprint regex = builder.getResult();
 
         String expectedPattern = ".";
         assertThat(regex.getPattern())
@@ -51,7 +51,7 @@ class BuilderBlueprintTest {
     @Test
     void testBuildDigit() {
         builder.buildDigit();
-        Regex regex = builder.getResult();
+        BuilderBlueprint regex = builder.getResult();
 
         String expectedPattern = "\\d";
         assertThat(regex.getPattern())
@@ -62,7 +62,7 @@ class BuilderBlueprintTest {
     @Test
     void testBuildWhitespace() {
         builder.buildWhitespace();
-        Regex regex = builder.getResult();
+        BuilderBlueprint regex = builder.getResult();
 
         String expectedPattern = "\\s";
         assertThat(regex.getPattern())
@@ -73,7 +73,7 @@ class BuilderBlueprintTest {
     @Test
     void testBuildWordCharacter() {
         builder.buildWordCharacter();
-        Regex regex = builder.getResult();
+        BuilderBlueprint regex = builder.getResult();
 
         String expectedPattern = "\\w";
         assertThat(regex.getPattern())
@@ -91,7 +91,7 @@ class BuilderBlueprintTest {
 
     @Test
     void testRegexInstance_isNotNull() {
-        Regex regex = new Regex();
+        BuilderBlueprint regex = new BuilderBlueprint();
         assertThat(regex)
                 .withFailMessage("Expected regex instance to be not null, but got null")
                 .isNotNull();
