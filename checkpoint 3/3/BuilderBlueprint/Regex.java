@@ -2,10 +2,13 @@ import java.util.*;
 
 public class Regex {
     private StringBuilder pattern;
+	//
     public Regex() {
         pattern = new StringBuilder();
     }
+	//
     public Regex(List<String> components) {
+		//
         pattern = new StringBuilder();
         for (String c : components) {
             pattern.append(c);
@@ -16,12 +19,15 @@ public class Regex {
         return pattern.toString();
     }
 
+	//
     @Override
     public String toString() {
         return getPattern();
     }
 }
 
+
+// interface
 interface RegexBuilder {
     void buildLiteral(String literal);
     void buildAnyCharacter();
@@ -31,6 +37,8 @@ interface RegexBuilder {
     Regex getResult();
 }
 
+
+//////
 class ConcreteRegexBuilder implements RegexBuilder {
     private List<String> components = new ArrayList<>();
 
@@ -64,6 +72,7 @@ class ConcreteRegexBuilder implements RegexBuilder {
         return new Regex(components);
     }
 }
+
 class RegexDirector {
     private RegexBuilder builder;
 

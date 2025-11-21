@@ -18,7 +18,7 @@ public class DayOfWeekFinder {
                 case "sunday": targetDay = DayOfWeek.SUNDAY; break;
                 default: return "Error";
             }
-            int daysToAdd = (targetDay.getValue() - date.getDayOfWeek().getValue() + 7) % 7;
+			int daysToAdd = (targetDay.getValue() - date.getDayOfWeek().getValue() + 7) % 7;
             if(daysToAdd == 0) daysToAdd = 7;
             return date.plusDays(daysToAdd).toString();
         } catch (DateTimeParseException e) {
